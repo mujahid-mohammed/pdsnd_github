@@ -232,6 +232,18 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def get_raw_data(df):
+    """Prompt the user whether they would like want to see the raw data. If the user answers 'yes,'
+    then the script should print 5 rows of the data at a time."""
+
+    limit = 0
+    while (True):
+        get_inp = input('\nWould you like to see the raw data? Enter yes or no.\n').lower()
+        if get_inp == 'yes':
+            print(df[limit: limit + 5])
+            limit += 5
+        else:
+            break
 
 def main():
     while True:
